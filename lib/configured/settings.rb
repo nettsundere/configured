@@ -1,4 +1,4 @@
-module Configured
+module Configured  
   class Settings
     # Initialize using required configuration data (YAML::load result, for example).
     def initialize(configuration_data)
@@ -14,8 +14,13 @@ module Configured
         settings.each_key { |key| settings_hash[key.intern] = settings[key]}
         settings_hash
       rescue
-        raise "Can't find \"#{environment}\" section in config."
+        raise NoEnvironmentError, "Can't find \"#{environment}\" section in config."
       end  
+    end
+    
+    # Error for situation when we can't find the required environment section 
+    # in configuration file.
+    class NoEnvironmentError < StandardError
     end
   end
 end

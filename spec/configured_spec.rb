@@ -19,7 +19,7 @@ describe Configured do
       2.times { Configured.in_yaml some_config }
     end
 
-    it "should raise an exception if there is no such configuration file." do
+    it "should raise an exception if there is no such configuration file" do
       lambda { Configured.in_yaml "bad_file" }.should raise_error
     end
   end
