@@ -1,10 +1,12 @@
 module Configured
   class << self
+
+    @@config_initters = {}
+
     # Load configuration data stored in YAML.
     # Filename can be passed as parameter.
     def in_yaml(filename = "config/database.yml")
       begin        
-        @@config_initters ||= {}
         @@config_initters[filename] ||= 
         begin
           data = YAML::load(File.open filename)
