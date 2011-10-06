@@ -13,5 +13,5 @@ Gem::Specification.new do |s|
   s.homepage = "https://github.com/nettsundere/configured"
   s.summary = "#{Configured::Version::SUMMARY}"
   s.description = "configured. Use your database.yaml in rails initters. For redis, redis-store and e.t.c."
-  s.files = Dir["{lib/*,lib/*/*,spec/*}"] + %w{README.md}
+  s.files = Dir["{lib/*,lib/*/*,spec/*}"] + %w{README.md Rakefile}
 end
