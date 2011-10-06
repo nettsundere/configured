@@ -8,7 +8,7 @@ module Configured
     # Get settings for the required environment.
     def for_the(environment)
       begin
-        settings = @configuration_data[environment] || raise
+        settings = @configuration_data[environment.to_s] || raise
         
         settings_hash = {}
         settings.each_key { |key| settings_hash[key.intern] = settings[key]}

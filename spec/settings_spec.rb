@@ -16,8 +16,13 @@ module Configured
         ret = Settings.new(@configuration_fake).for_the("test")
         ret.should == {:setting => "value", :setting2 => "value2"}     
       end
+
+      it "should return settings when environment name passed as symbol just like if environment name passed as string" do
+        ret = Settings.new(@configuration_fake).for_the(:test)
+        ret.should == {:setting => "value", :setting2 => "value2"}      
+      end
       
-      it "should raise expception if there is no such environment in config" do
+      it "should raise an expception if there is no such environment in config" do
         lambda {Settings.new(@configuration_fake).for_the("bad-entry")}.should raise_error
       end    
     end
