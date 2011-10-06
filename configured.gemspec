@@ -1,6 +1,5 @@
 # Encoding: UTF-8
 require 'rubygems'
-require 'rake'
 
 require File.expand_path('../lib/configured/version', __FILE__)
 
